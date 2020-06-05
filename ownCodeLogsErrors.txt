@@ -1,0 +1,159 @@
+(base) dhankar@dhankar-1:~/_dc_all/tf$ conda activate tensorflow_gpuenv
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ pip install pykitti
+Collecting pykitti
+  Downloading pykitti-0.3.1-py2.py3-none-any.whl (13 kB)
+Collecting pandas
+  Downloading pandas-1.0.4-cp38-cp38-manylinux1_x86_64.whl (10.0 MB)
+     |████████████████████████████████| 10.0 MB 1.4 MB/s 
+Collecting Pillow
+  Using cached Pillow-7.1.2-cp38-cp38-manylinux1_x86_64.whl (2.1 MB)
+Requirement already satisfied: matplotlib in /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages (from pykitti) (3.2.1)
+Requirement already satisfied: numpy in /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages (from pykitti) (1.18.1)
+Collecting pytz>=2017.2
+  Downloading pytz-2020.1-py2.py3-none-any.whl (510 kB)
+     |████████████████████████████████| 510 kB 78.1 MB/s 
+Requirement already satisfied: python-dateutil>=2.6.1 in /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages (from pandas->pykitti) (2.8.1)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages (from matplotlib->pykitti) (1.2.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages (from matplotlib->pykitti) (2.4.7)
+Requirement already satisfied: cycler>=0.10 in /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages (from matplotlib->pykitti) (0.10.0)
+Requirement already satisfied: six>=1.5 in /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages (from python-dateutil>=2.6.1->pandas->pykitti) (1.14.0)
+Installing collected packages: pytz, pandas, Pillow, pykitti
+Successfully installed Pillow-7.1.2 pandas-1.0.4 pykitti-0.3.1 pytz-2020.1
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ 
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ pip install mayavi
+Collecting mayavi
+  Downloading mayavi-4.7.1.tar.bz2 (7.0 MB)
+     |████████████████████████████████| 7.0 MB 1.0 MB/s 
+Collecting apptools
+  Downloading apptools-4.5.0.tar.gz (297 kB)
+     |████████████████████████████████| 297 kB 27.3 MB/s 
+Collecting envisage
+  Downloading envisage-4.9.2.tar.gz (518 kB)
+     |████████████████████████████████| 518 kB 78.1 MB/s 
+Requirement already satisfied: numpy in /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages (from mayavi) (1.18.1)
+Collecting pyface>=6.1.1
+  Downloading pyface-7.0.0.tar.gz (5.3 MB)
+     |████████████████████████████████| 5.3 MB 26.2 MB/s 
+Requirement already satisfied: pygments in /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages (from mayavi) (2.6.1)
+Collecting traits>=4.6.0
+  Downloading traits-6.1.0.tar.gz (564 kB)
+     |████████████████████████████████| 564 kB 26.2 MB/s 
+Collecting traitsui>=6.0.0
+  Downloading traitsui-7.0.0.tar.gz (5.2 MB)
+     |████████████████████████████████| 5.2 MB 27.6 MB/s 
+ERROR: Could not find a version that satisfies the requirement vtk (from mayavi) (from versions: none)
+ERROR: No matching distribution found for vtk (from mayavi)
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ 
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ sudo apt-get install python-vtk
+[sudo] password for dhankar: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package python-vtk is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'python-vtk' has no installation candidate
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ 
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ sudo python3 -m pip install mayavi
+WARNING: The directory '/home/dhankar/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting mayavi
+  Downloading mayavi-4.7.1.tar.bz2 (7.0 MB)
+     |████████████████████████████████| 7.0 MB 1.1 MB/s 
+Collecting apptools
+  Downloading apptools-4.5.0.tar.gz (297 kB)
+     |████████████████████████████████| 297 kB 120.9 MB/s 
+Collecting envisage
+  Downloading envisage-4.9.2.tar.gz (518 kB)
+     |████████████████████████████████| 518 kB 45.4 MB/s 
+Collecting numpy
+  Downloading numpy-1.18.5-cp36-cp36m-manylinux1_x86_64.whl (20.1 MB)
+     |████████████████████████████████| 20.1 MB 37.1 MB/s 
+Collecting pyface>=6.1.1
+  Downloading pyface-7.0.0.tar.gz (5.3 MB)
+     |████████████████████████████████| 5.3 MB 63.5 MB/s 
+Collecting pygments
+  Downloading Pygments-2.6.1-py3-none-any.whl (914 kB)
+     |████████████████████████████████| 914 kB 125.5 MB/s 
+Collecting traits>=4.6.0
+  Downloading traits-6.1.0.tar.gz (564 kB)
+     |████████████████████████████████| 564 kB 91.2 MB/s 
+Collecting traitsui>=6.0.0
+  Downloading traitsui-7.0.0.tar.gz (5.2 MB)
+     |████████████████████████████████| 5.2 MB 30.4 MB/s 
+Collecting vtk
+  Downloading vtk-8.1.2-cp36-cp36m-manylinux1_x86_64.whl (48.9 MB)
+     |████████████████████████████████| 48.9 MB 17.2 MB/s 
+Collecting configobj
+  Downloading configobj-5.0.6.tar.gz (33 kB)
+Requirement already satisfied: six in /usr/lib/python3/dist-packages (from apptools->mayavi) (1.11.0)
+Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from envisage->mayavi) (39.0.1)
+Building wheels for collected packages: mayavi, apptools, envisage, pyface, traits, traitsui, configobj
+  Building wheel for mayavi (setup.py) ... error
+  ERROR: Command errored out with exit status 1:
+   command: /usr/bin/python3 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-sbmx0tfn/mayavi/setup.py'"'"'; __file__='"'"'/tmp/pip-install-sbmx0tfn/mayavi/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-0uyaoynk
+       cwd: /tmp/pip-install-sbmx0tfn/mayavi/
+  Complete output (12 lines):
+  ********************************************************************************
+  
+      Numpy is required to build Mayavi correctly, please install it first.
+  
+  ********************************************************************************
+  Traceback (most recent call last):
+    File "<string>", line 1, in <module>
+    File "/tmp/pip-install-sbmx0tfn/mayavi/setup.py", line 406, in <module>
+      raise RuntimeError(msg)
+  RuntimeError:
+      Numpy is required to build Mayavi correctly, please install it first.
+  
+  ----------------------------------------
+  ERROR: Failed building wheel for mayavi
+  Running setup.py clean for mayavi
+  Building wheel for apptools (setup.py) ... done
+  Created wheel for apptools: filename=apptools-4.5.0-py3-none-any.whl size=397647 sha256=f85d8fd4f7d553f3eb19a5af466ee467a4a22e0756c62ebfe4a1cde3a30cf5d4
+  Stored in directory: /tmp/pip-ephem-wheel-cache-3ovxp6je/wheels/ff/b1/24/3e561302ea700a71351f9e216731a4ba5ceccfa309cb323d0d
+  Building wheel for envisage (setup.py) ... done
+  Created wheel for envisage: filename=envisage-4.9.2-py3-none-any.whl size=338101 sha256=4358d2234d2ee94c97abc8790081741c3379fc6a691501efdbb815697d8404b0
+  Stored in directory: /tmp/pip-ephem-wheel-cache-3ovxp6je/wheels/92/c5/09/c9f4df6137b6418c113bd9e000d1b51b1f539bb7d43421ef1b
+  Building wheel for pyface (setup.py) ... done
+  Created wheel for pyface: filename=pyface-7.0.0-py3-none-any.whl size=1075703 sha256=c352d4e63fcee1608ad3daf69eba42034df51c3a441c455b0be51f926552346f
+  Stored in directory: /tmp/pip-ephem-wheel-cache-3ovxp6je/wheels/fb/f7/d3/7f4fb55b344468b70b02aacb1de18f46086316fb47208f05cc
+  Building wheel for traits (setup.py) ... done
+  Created wheel for traits: filename=traits-6.1.0-cp36-cp36m-linux_x86_64.whl size=530357 sha256=0a41c43517b708eff5553351b0de94c782917328b0aede8b10bb0661bf6af998
+  Stored in directory: /tmp/pip-ephem-wheel-cache-3ovxp6je/wheels/8f/5c/29/beda9cca12edcd262eedbcca174355f36be0b82e3dc852692b
+  Building wheel for traitsui (setup.py) ... done
+  Created wheel for traitsui: filename=traitsui-7.0.0-py3-none-any.whl size=786558 sha256=3cc341cebd8632acb84ee7f32268236d096cc13a354ed79cd8d47b16619645cb
+  Stored in directory: /tmp/pip-ephem-wheel-cache-3ovxp6je/wheels/fc/57/da/3f344a31636357a7286b691814c5e21cd56050e55dab45d6e5
+  Building wheel for configobj (setup.py) ... done
+  Created wheel for configobj: filename=configobj-5.0.6-py3-none-any.whl size=36364 sha256=e4f93910b040a5eb583e917a7e412aa86424be9468bd1effb8f9731a08a61500
+  Stored in directory: /tmp/pip-ephem-wheel-cache-3ovxp6je/wheels/14/d5/8e/1a6dd2be7614b4a455867b3b5eb57054f278470a4c07564381
+Successfully built apptools envisage pyface traits traitsui configobj
+Failed to build mayavi
+Installing collected packages: configobj, traits, pyface, traitsui, apptools, envisage, numpy, pygments, vtk, mayavi
+    Running setup.py install for mayavi ... done
+Successfully installed apptools-4.5.0 configobj-5.0.6 envisage-4.9.2 mayavi-4.7.1 numpy-1.18.5 pyface-7.0.0 pygments-2.6.1 traits-6.1.0 traitsui-7.0.0 vtk-8.1.2
+WARNING: You are using pip version 20.0.2; however, version 20.1.1 is available.
+You should consider upgrading via the '/usr/bin/python3 -m pip install --upgrade pip' command.
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ 
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ 
+
+
+
+
+########### FOOBAR --- Dump 
+
+"""
+    Loads dataset labels also referred to as tracklets, saving them individually for each frame.
+
+    Parameters
+    ----------
+    n_frames    : Number of frames in the dataset.
+    xml_path    : Path to the tracklets XML.
+
+    Returns
+    -------
+    Tuple of dictionaries with integer keys corresponding to absolute frame numbers and arrays as values. First array
+    contains coordinates of bounding box vertices for each object in the frame, and the second array contains objects
+    types as strings.
+    """
+    tracklets = xmlParser.parseXML(xml_path)
