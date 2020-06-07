@@ -1,6 +1,6 @@
 # lidar
 lidar
 
-![alt text](screen_captures/Screenshot from 2020-06-08 01-58-35.png)
+![screen_captures/Screenshot from 2020-06-08 01-58-35.png](https://github.com/DigitalCognition-GIS/lidar/blob/master/screen_captures/Screenshot%20from%202020-06-08%2001-58-35.png)
 
-screen_captures/Screenshot from 2020-06-08 01-58-35.png
+
