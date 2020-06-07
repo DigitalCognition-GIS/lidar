@@ -1,3 +1,37 @@
+# /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/vtk
+# cp /usr/local/lib/python3.6/dist-packages/vtk /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/vtk
+
+
+
+
+
+
+drwxr-sr-x 23 root staff  4096 Jun  5 23:28 pyface
+drwxr-sr-x  2 root staff  4096 Jun  5 23:28 pyface-7.0.0.dist-info
+drwxr-sr-x 12 root staff  4096 Jun  5 23:28 traitsui
+drwxr-sr-x  2 root staff  4096 Jun  5 23:28 traitsui-7.0.0.dist-info
+drwxr-sr-x 19 root staff  4096 Jun  5 23:28 apptools
+drwxr-sr-x  2 root staff  4096 Jun  5 23:28 apptools-4.5.0.dist-info
+drwxr-sr-x  7 root staff  4096 Jun  5 23:28 envisage
+drwxr-sr-x  2 root staff  4096 Jun  5 23:28 envisage-4.9.2.dist-info
+drwxr-sr-x 17 root staff  4096 Jun  5 23:28 numpy
+drwxr-sr-x  2 root staff  4096 Jun  5 23:28 numpy.libs
+drwxr-sr-x  2 root staff  4096 Jun  5 23:28 numpy-1.18.5.dist-info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (base) dhankar@dhankar-1:~/_dc_all/tf$ conda activate tensorflow_gpuenv
 (tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ pip install pykitti
 Collecting pykitti
@@ -138,6 +172,197 @@ You should consider upgrading via the '/usr/bin/python3 -m pip install --upgrade
 (tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ 
 
 
+########### FOOBAR---- mayavi and VTK 
+
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/lidar/semantic_kitti/semantic-kitti-api$ pip3 install vtk
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: vtk in /usr/local/lib/python3.6/dist-packages (8.1.2)
+WARNING: You are using pip version 20.0.2; however, version 20.1.1 is available.
+You should consider upgrading via the '/usr/bin/python3 -m pip install --upgrade pip' command.
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/lidar/semantic_kitti/semantic-kitti-api$ cd /usr/local/lib/python3.6/dist-packages
+(tensorflow_gpuenv) dhankar@dhankar-1:/usr/local/lib/python3.6/dist-packages$ ls -ltr
+
+-rw-r--r--  1 root staff   675 Jun  5 23:28 vtkVersion.py
+drwxr-sr-x  2 root staff  4096 Jun  5 23:28 __pycache__
+drwxr-sr-x 11 root staff 20480 Jun  5 23:28 vtk
+drwxr-sr-x  2 root staff  4096 Jun  5 23:28 vtk-8.1.2.dist-info
+drwxr-sr-x 15 root staff  4096 Jun  5 23:29 mayavi
+drwxr-sr-x 11 root staff  4096 Jun  5 23:29 tvtk
+drwxr-sr-x  2 root staff  4096 Jun  5 23:29 mayavi-4.7.1.egg-info
+(tensorflow_gpuenv) dhankar@dhankar-1:/usr/local/lib/python3.6/dist-packages$ python
+Python 3.8.3 (default, May 19 2020, 18:47:26) 
+[GCC 7.3.0] :: Anaconda, Inc. on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import mayavi
+>>> import vtk
+>>> 
+>>> 
+[1]+  Stopped                 python
+(tensorflow_gpuenv) dhankar@dhankar-1:/usr/local/lib/python3.6/dist-packages$ 
+(tensorflow_gpuenv) dhankar@dhankar-1:/usr/local/lib/python3.6/dist-packages$ cd -
+/home/dhankar/_dc_all/lidar/semantic_kitti/semantic-kitti-api
+(tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/lidar/semantic_kitti/semantic-kitti-api$ 
+#
+#
+
+
+
+##ERROR_DUMP --- probably need to file an issue with Mayavi == RuntimeError: No tvtk.toolkits plugin found for toolkit null
+## IS it the same issue as this == https://github.com/enthought/mayavi/issues/652
+
+---------------------------------------------------------------------------
+RuntimeError                              Traceback (most recent call last)
+<ipython-input-16-053352eb1b10> in <module>
+      1 # Plot using mayavi -Much faster and smoother than matplotlib
+----> 2 import mayavi.mlab
+      3 
+      4 fig = mayavi.mlab.figure(bgcolor=(0, 0, 0), size=(640, 360))
+      5 mayavi.mlab.points3d(
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/mayavi/mlab.py in <module>
+     14 # Mayavi imports
+     15 from mayavi.core.common import process_ui_events
+---> 16 from mayavi.tools.camera import view, roll, yaw, pitch, move
+     17 from mayavi.tools.figure import figure, clf, gcf, savefig, \
+     18     draw, sync_camera, close, screenshot
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/mayavi/tools/camera.py in <module>
+     22 # We can't use gcf, as it creates a circular import in camera management
+     23 # routines.
+---> 24 from .engine_manager import get_engine
+     25 
+     26 
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/mayavi/tools/engine_manager.py in <module>
+     12 from mayavi.preferences.api import preference_manager
+     13 from mayavi.core.registry import registry
+---> 14 from mayavi.core.engine import Engine
+     15 from mayavi.core.off_screen_engine import OffScreenEngine
+     16 from mayavi.core.null_engine import NullEngine
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/mayavi/core/engine.py in <module>
+     32 from mayavi.core.adder_node import AdderNode, SceneAdderNode
+     33 from mayavi.preferences.api import preference_manager
+---> 34 from mayavi.core.ui.mayavi_scene import viewer_factory
+     35 
+     36 
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/mayavi/core/ui/mayavi_scene.py in <module>
+     10 
+     11 # Enthought library imports
+---> 12 from tvtk.tools.ivtk import IVTK
+     13 from tvtk.pyface.api import DecoratedScene
+     14 from traits.api import Callable
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/tvtk/tools/ivtk.py in <module>
+     33 from pyface.api import SplitApplicationWindow, ApplicationWindow
+     34 from pyface.api import SplitPanel
+---> 35 from tvtk.pyface.api import Scene, DecoratedScene
+     36 from pyface.action.api import Action, MenuBarManager,\
+     37      MenuManager, Separator
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/tvtk/pyface/api.py in <module>
+----> 1 from .decorated_scene import DecoratedScene
+      2 from .scene import Scene
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/tvtk/pyface/decorated_scene.py in <module>
+     10 
+     11 # Import the toolkit specific version.
+---> 12 from tvtk.pyface.toolkit import toolkit_object
+     13 DecoratedScene = toolkit_object('decorated_scene:DecoratedScene')
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/tvtk/pyface/toolkit.py in <module>
+      1 from pyface.base_toolkit import find_toolkit
+      2 
+----> 3 toolkit = toolkit_object = find_toolkit('tvtk.toolkits')
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/pyface/base_toolkit.py in find_toolkit(entry_point, toolkits, priorities)
+    267     """
+    268     if ETSConfig.toolkit:
+--> 269         return import_toolkit(ETSConfig.toolkit, entry_point)
+    270 
+    271     entry_points = [
+
+~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/pyface/base_toolkit.py in import_toolkit(toolkit_name, entry_point)
+    213         msg = msg.format(entry_point, toolkit_name)
+    214         logger.debug(msg)
+--> 215         raise RuntimeError(msg)
+    216     elif len(plugins) > 1:
+    217         msg = "multiple %r plugins found for toolkit %r: %s"
+
+RuntimeError: No tvtk.toolkits plugin found for toolkit null
+
+
+
+
+##ERROR_DUMP --- Errors out in Jupyter also errors out in console / python prompt ..
+(tensorflow_gpuenv) dhankar@dhankar-1:~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages$ 
+(tensorflow_gpuenv) dhankar@dhankar-1:~/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages$ python
+Python 3.8.3 (default, May 19 2020, 18:47:26) 
+[GCC 7.3.0] :: Anaconda, Inc. on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import mayavi
+>>> import vtk
+>>> 
+>>> from mayavi import mlab
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/mayavi/mlab.py", line 16, in <module>
+    from mayavi.tools.camera import view, roll, yaw, pitch, move
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/mayavi/tools/camera.py", line 24, in <module>
+    from .engine_manager import get_engine
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/mayavi/tools/engine_manager.py", line 14, in <module>
+    from mayavi.core.engine import Engine
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/mayavi/core/engine.py", line 34, in <module>
+    from mayavi.core.ui.mayavi_scene import viewer_factory
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/mayavi/core/ui/mayavi_scene.py", line 12, in <module>
+    from tvtk.tools.ivtk import IVTK
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/tvtk/tools/ivtk.py", line 35, in <module>
+    from tvtk.pyface.api import Scene, DecoratedScene
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/tvtk/pyface/api.py", line 1, in <module>
+    from .decorated_scene import DecoratedScene
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/tvtk/pyface/decorated_scene.py", line 12, in <module>
+    from tvtk.pyface.toolkit import toolkit_object
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/tvtk/pyface/toolkit.py", line 3, in <module>
+    toolkit = toolkit_object = find_toolkit('tvtk.toolkits')
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/pyface/base_toolkit.py", line 269, in find_toolkit
+    return import_toolkit(ETSConfig.toolkit, entry_point)
+  File "/home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/pyface/base_toolkit.py", line 215, in import_toolkit
+    raise RuntimeError(msg)
+RuntimeError: No tvtk.toolkits plugin found for toolkit null
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ########### FOOBAR --- Dump 
@@ -157,3 +382,26 @@ You should consider upgrading via the '/usr/bin/python3 -m pip install --upgrade
     types as strings.
     """
     tracklets = xmlParser.parseXML(xml_path)
+
+
+plt.savefig('test.pdf',quality=90) 
+
+# Save the image in memory in PNG format
+png1 = io.BytesIO()
+plt.savefig(png1, format="png")
+
+# Load this image into PIL
+png2 = Image.open(png1)
+
+# Save as TIFF
+png2.save("3dPlot.tiff")
+png1.close()
+
+
+
+"""
+, dpi=None, facecolor='w', edgecolor='w',
+        orientation='portrait', papertype=None, format=None,
+        transparent=False, bbox_inches=None, pad_inches=0.1,
+        frameon=None, metadata=None
+"""
