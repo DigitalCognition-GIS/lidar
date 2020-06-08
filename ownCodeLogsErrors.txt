@@ -336,7 +336,18 @@ RuntimeError: No tvtk.toolkits plugin found for toolkit null
 
 
 
+##### python-vtk
 
+$ sudo apt-get install -y python-vtk
+[sudo] password for dhankar: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package python-vtk is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'python-vtk' has no installation candidate
 
 
 
