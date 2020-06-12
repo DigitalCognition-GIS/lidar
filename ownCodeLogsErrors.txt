@@ -1,11 +1,28 @@
-# /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/vtk
-# cp /usr/local/lib/python3.6/dist-packages/vtk /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/vtk
+## ERROR - Mayavi wont work because of this , probable install location issue == 
+# RuntimeError: No tvtk.toolkits plugin found for toolkit null
+#
 
+## Python LIDAR data related Libs on PyPi
+#
+https://pypi.org/search/?q=lidar
+https://pypi.org/project/libLAS/
+https://pypi.org/project/sslam/
+https://pypi.org/project/LiDARtoolkit/
+https://github.com/jakarto3d/jakarto_datasets
+https://github.com/jakarto3d/jakarto_datasets
 
+##
+# vtk - which is a dependency for Mayavi gets installed here == /usr/local/lib/python3.6/dist-packages/
+# have copied it to the == anaconda3/envs/tensorflow_gpuenv
+# 
+$ /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/vtk
+$ cp /usr/local/lib/python3.6/dist-packages/vtk /home/dhankar/anaconda3/envs/tensorflow_gpuenv/lib/python3.8/site-packages/vtk
+#
+#
 
-
-
-
+##
+# traitsui -- has been there for a while - even before i installed Mayavi 
+#
 drwxr-sr-x 23 root staff  4096 Jun  5 23:28 pyface
 drwxr-sr-x  2 root staff  4096 Jun  5 23:28 pyface-7.0.0.dist-info
 drwxr-sr-x 12 root staff  4096 Jun  5 23:28 traitsui
@@ -22,16 +39,8 @@ drwxr-sr-x  2 root staff  4096 Jun  5 23:28 numpy-1.18.5.dist-info
 
 
 
-
-
-
-
-
-
-
-
-
-
+## Termianl_Dumps
+#
 (base) dhankar@dhankar-1:~/_dc_all/tf$ conda activate tensorflow_gpuenv
 (tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ pip install pykitti
 Collecting pykitti
@@ -172,7 +181,7 @@ You should consider upgrading via the '/usr/bin/python3 -m pip install --upgrade
 (tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/tf$ 
 
 
-########### FOOBAR---- mayavi and VTK 
+## FOOBAR---- mayavi and VTK 
 
 (tensorflow_gpuenv) dhankar@dhankar-1:~/_dc_all/lidar/semantic_kitti/semantic-kitti-api$ pip3 install vtk
 Defaulting to user installation because normal site-packages is not writeable
@@ -209,7 +218,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
 ##ERROR_DUMP --- probably need to file an issue with Mayavi == RuntimeError: No tvtk.toolkits plugin found for toolkit null
-## IS it the same issue as this == https://github.com/enthought/mayavi/issues/652
+# Not sure if its same issue as this == https://github.com/enthought/mayavi/issues/652
 
 ---------------------------------------------------------------------------
 RuntimeError                              Traceback (most recent call last)
@@ -355,29 +364,8 @@ E: Package 'python-vtk' has no installation candidate
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-########### FOOBAR --- Dump 
-
+## Code_Dump - not an error
+#
 """
     Loads dataset labels also referred to as tracklets, saving them individually for each frame.
 
